@@ -4,6 +4,12 @@
 
 GRU Multiheaded attention model for predicting patient hospital emergency visit based on claims data. 
 
+#### Model Design
+
+Below is the high level design of the GRU model with multiheaded attention
+
+![img1](https://github.com/bsathyamur/ERVisit-GRU-MultiheadedAttn/blob/main/model%20diagram.png)
+
 ### Model execution steps
 
 Please follow the below steps for the execution of the model
@@ -25,7 +31,3 @@ Please follow the below steps for the execution of the model
 3. First run the datapreprocess.py file from command prompt [python datapreprocess.py]
 
 5. Next run the models.py file from command prompt [python models.py]
-
-#### Model Design
-
-![img1](https://github.com/bsathyamur/ERVisit-GRU-MultiheadedAttn/blob/main/model%20diagram.png)
