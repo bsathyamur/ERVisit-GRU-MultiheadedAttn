@@ -1,8 +1,8 @@
-# ER Visit prediction from claims data
+# Emergency room visit prediction model from claims data
 
-#### Objective: 
+#### Objective:
+
 GRU Multiheaded attention model for predicting patient hospital emergency visit based on claims data. 
-
 
 ### Model execution steps
 
