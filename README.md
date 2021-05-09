@@ -28,4 +28,4 @@ Please follow the below steps for the execution of the model
 
 #### Model Design
 
-(!img1)
+(!img1)(https://github.com/bsathyamur/ERVisit-GRU-MultiheadedAttn/blob/main/model%20diagram.png)
