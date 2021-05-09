@@ -1,0 +1,13 @@
+{
+ 'input_years': [2018],
+ 'emergency_rev_cd': ["0450","0451","0452","0453","0454","0455","0456","0457","0458","0459","0981"],
+ 'max_claims': 100,
+ 'split_ratio': 0.8,
+ 'batch_size': 32,
+ 'num_ccs_codes': 540,
+ 'embeddingDim': 128,
+ 'NumEpochs': 5,
+ 'lr': 0.001,
+ 'include_demo': True,
+ 'embeddingDimDemo':128
+}
