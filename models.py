@@ -214,7 +214,7 @@ lr = config['lr']
 criterion = nn.BCELoss()
 optimizer = torch.optim.Adam(gruMH_rnn.parameters(), lr = lr)
 
-logging.info(f"optimizer intialized with learning rate  {lr}")
+logging.info(f"optimizer initialized with learning rate  {lr}")
 
 def eval_model(model, val_loader):
     
@@ -243,6 +243,8 @@ def train(model, train_loader, val_loader, n_epochs):
     losses = []
     auc = []
     fscore = []
+    precision = []
+    recall = []
 
     for epoch in range(n_epochs):
         train_loss = 0
@@ -268,14 +270,21 @@ def train(model, train_loader, val_loader, n_epochs):
         
         auc.append(roc_auc)
         fscore.append(f)
+        precision.append(p)
+        recall.append(r)
         
-        logging.info('Epoch: %d \t Validation f: %.2f, acc: %.2f'%(epoch+1,f,roc_auc))
+        logging.info('Epoch: %d \t Validation f: %.2f, acc: %.2f precision: %.2f recall: %2f'%(epoch+1,f,roc_auc,p,r))
 
-    return  losses,auc,fscore  
+    return  losses,auc,fscore,precision,recall  
         
 # number of epochs to train the model
 n_epochs = config['NumEpochs']
-losses,auc,fscore = train(gruMH_rnn, train_loader, val_loader, n_epochs)
+losses,auc,fscore,precision,recall = train(gruMH_rnn, train_loader, val_loader, n_epochs)
+
+logging.info('Average AUC: %2f'%(sum(auc)/n_epochs))
+logging.info('Average f1-score: %2f'%(sum(fscore)/n_epochs))
+logging.info('Average precision: %2f'%(sum(precision)/n_epochs))
+logging.info('Average recall: %2f'%(sum(recall)/n_epochs))
 
 def plot_performance(filename,n_epochs):
 
